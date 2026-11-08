@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview — Card | Personal Design System</title>
+  <link rel="stylesheet" href="../../tokens/tokens.css" />
+  <link rel="stylesheet" href="../../previews/preview.css" />
+  <link rel="stylesheet" href="card.css" />
+  <link rel="stylesheet" href="../button/button.css" />
+  <style>
+    body { background: var(--pds-background); color: var(--pds-text-primary); font-family: var(--pds-font-sans); }
+    .pv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--pds-space-6); }
+  </style>
+</head>
+<body class="pv-page">
+  <header class="pv-header">
+    <h1 class="pv-title">Card</h1>
+    <p class="pv-sub">Content container — basic, media, interactive, selectable.</p>
+  </header>
+
+  <section class="pv-section">
+    <h2 class="pv-h2">Variants</h2>
+    <div class="pv-grid">
+      <article class="pds-card">
+        <div class="pds-card__body">
+          <h3 class="pds-card__title">Basic card</h3>
+          <p class="pds-card__text">Text-only content grouping with an action row.</p>
+        </div>
+        <footer class="pds-card__actions">
+          <button class="pds-btn pds-btn--secondary pds-btn--sm" type="button"><span class="pds-btn__label">Action</span></button>
+        </footer>
+      </article>
+
+      <article class="pds-card pds-card--media-top">
+        <img class="pds-card__media" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360'%3E%3Crect width='640' height='360' fill='%23ececee'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%238a8a96' font-family='sans-serif' font-size='24'%3EMedia placeholder%3C/text%3E%3C/svg%3E" alt="Neutral placeholder demonstrating card media slot" />
+        <div class="pds-card__body">
+          <h3 class="pds-card__title">Media card</h3>
+          <p class="pds-card__text">Media keeps 16:9 aspect ratio. Swap with real content per project.</p>
+        </div>
+        <footer class="pds-card__actions">
+          <button class="pds-btn pds-btn--primary pds-btn--sm" type="button"><span class="pds-btn__label">Primary</span></button>
+          <button class="pds-btn pds-btn--ghost pds-btn--sm" type="button"><span class="pds-btn__label">Secondary</span></button>
+        </footer>
+      </article>
+
+      <button class="pds-card pds-card--interactive" type="button" style="text-align:left;" data-pds-demo="select" aria-pressed="false">
+        <div class="pds-card__body">
+          <h3 class="pds-card__title">Selectable card</h3>
+          <p class="pds-card__text">Click to toggle selection (aria-pressed). Entire card is one control.</p>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <section class="pv-section">
+    <h2 class="pv-h2">States</h2>
+    <div class="pv-grid">
+      <article class="pds-card" style="border-color: var(--pds-border-strong); box-shadow: var(--pds-shadow-md);">
+        <div class="pds-card__body">
+          <h3 class="pds-card__title">Hover (simulated)</h3>
+          <p class="pds-card__text">Shadow + border emphasis.</p>
+        </div>
+      </article>
+      <article class="pds-card pds-card--selected">
+        <div class="pds-card__body">
+          <h3 class="pds-card__title">Selected</h3>
+          <p class="pds-card__text">Accent border signals selection.</p>
+        </div>
+      </article>
+      <article class="pds-card pds-card--disabled">
+        <div class="pds-card__body">
+          <h3 class="pds-card__title">Disabled</h3>
+          <p class="pds-card__text">Reduced opacity, no interaction.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <script src="../button/button.js"></script>
+  <script src="card.js"></script>
+</body>
+</html>

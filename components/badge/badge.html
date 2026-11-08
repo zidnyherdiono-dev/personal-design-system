@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview — Badge | Personal Design System</title>
+  <link rel="stylesheet" href="../../tokens/tokens.css" />
+  <link rel="stylesheet" href="../../previews/preview.css" />
+  <link rel="stylesheet" href="badge.css" />
+  <style>
+    body { background: var(--pds-background); color: var(--pds-text-primary); font-family: var(--pds-font-sans); }
+  </style>
+</head>
+<body class="pv-page">
+  <header class="pv-header">
+    <h1 class="pv-title">Badge</h1>
+    <p class="pv-sub">Status labels, outline tags, interactive filter chips.</p>
+  </header>
+
+  <section class="pv-section">
+    <h2 class="pv-h2">Variants</h2>
+    <div class="pv-row">
+      <span class="pds-badge">Neutral</span>
+      <span class="pds-badge pds-badge--success"><span class="pds-badge__dot" aria-hidden="true"></span>Published</span>
+      <span class="pds-badge pds-badge--warning"><span class="pds-badge__dot" aria-hidden="true"></span>Draft</span>
+      <span class="pds-badge pds-badge--danger"><span class="pds-badge__dot" aria-hidden="true"></span>Failed</span>
+      <span class="pds-badge pds-badge--info"><span class="pds-badge__dot" aria-hidden="true"></span>In review</span>
+      <span class="pds-badge pds-badge--outline">Outline</span>
+    </div>
+  </section>
+
+  <section class="pv-section">
+    <h2 class="pv-h2">Interactive (filter chips — try clicking)</h2>
+    <div class="pv-row">
+      <button class="pds-badge pds-badge--interactive" type="button" data-pds-demo="filter" aria-pressed="false">Portfolio</button>
+      <button class="pds-badge pds-badge--interactive" type="button" data-pds-demo="filter" aria-pressed="true">Landing</button>
+      <button class="pds-badge pds-badge--interactive" type="button" data-pds-demo="filter" aria-pressed="false">Dashboard</button>
+    </div>
+    <h2 class="pv-h2" style="margin-top: var(--pds-space-8);">Removable tag</h2>
+    <div class="pv-row">
+      <span class="pds-badge pds-badge--outline">
+        React
+        <button class="pds-badge pds-badge--interactive" style="min-height:auto; padding: 0 4px;" type="button" data-pds-demo="remove" aria-label="Remove React">×</button>
+      </span>
+    </div>
+  </section>
+
+  <script src="badge.js"></script>
+</body>
+</html>

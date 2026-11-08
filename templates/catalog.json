@@ -1,0 +1,22 @@
+{
+  "_meta": {
+    "description": "Machine-readable template catalog. Categories are structural; visual style is never baked in.",
+    "version": "0.1.0",
+    "styleAxes": ["theme", "density", "mood", "motion"],
+    "categories": ["portfolio", "landing", "editorial", "dashboard", "commerce", "event"]
+  },
+  "templates": [
+    {
+      "id": "portfolio-scaffold",
+      "name": "Portfolio Scaffold",
+      "category": "portfolio",
+      "path": "templates/portfolio-scaffold/",
+      "entry": "templates/portfolio-scaffold/index.html",
+      "status": "scaffold",
+      "designFinal": false,
+      "sections": ["header/nav", "hero", "about", "projects grid", "contact", "footer"],
+      "composes": ["components/button", "components/card", "components/badge", "patterns/hero-section", "patterns/contact-form"],
+      "notes": "Wireframe-level. Visual identity intentionally undecided — see tokens/STATUS.md."
+    }
+  ]
+}

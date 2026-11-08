@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview — Input | Personal Design System</title>
+  <link rel="stylesheet" href="../../tokens/tokens.css" />
+  <link rel="stylesheet" href="../../previews/preview.css" />
+  <link rel="stylesheet" href="input.css" />
+  <style>
+    body { background: var(--pds-background); color: var(--pds-text-primary); font-family: var(--pds-font-sans); }
+  </style>
+</head>
+<body class="pv-page">
+  <header class="pv-header">
+    <h1 class="pv-title">Input</h1>
+    <p class="pv-sub">Label + help + error contract. Try the validation demo at the bottom.</p>
+  </header>
+
+  <section class="pv-section">
+    <h2 class="pv-h2">Variants</h2>
+    <div class="pv-stack">
+      <div class="pds-field">
+        <label class="pds-label" for="pv-basic">Basic</label>
+        <input class="pds-input" id="pv-basic" type="text" placeholder="Placeholder text" />
+      </div>
+      <div class="pds-field">
+        <label class="pds-label" for="pv-help">With help text <span class="pds-required-mark" aria-hidden="true">*</span><span class="pv-visually-hidden"> (required)</span></label>
+        <input class="pds-input" id="pv-help" type="email" required aria-describedby="pv-help-msg" />
+        <p class="pds-help" id="pv-help-msg">We never show your email publicly.</p>
+      </div>
+      <div class="pds-field">
+        <label class="pds-label" for="pv-area">Textarea</label>
+        <textarea class="pds-input pds-input--area" id="pv-area" placeholder="Multi-line text"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <section class="pv-section">
+    <h2 class="pv-h2">States</h2>
+    <div class="pv-stack">
+      <div class="pds-field">
+        <label class="pds-label" for="pv-error">Error</label>
+        <input class="pds-input pds-input--error" id="pv-error" value="invalid-value" aria-invalid="true" aria-describedby="pv-error-msg" />
+        <p class="pds-error-text" id="pv-error-msg" role="alert">Please enter a valid value.</p>
+      </div>
+      <div class="pds-field">
+        <label class="pds-label" for="pv-disabled">Disabled</label>
+        <input class="pds-input" id="pv-disabled" value="Read-only context" disabled />
+      </div>
+    </div>
+  </section>
+
+  <section class="pv-section">
+    <h2 class="pv-h2">Validation demo (interactive)</h2>
+    <form data-pds-demo="validate" class="pv-stack" novalidate>
+      <div class="pds-field">
+        <label class="pds-label" for="pv-live">Name (required)</label>
+        <input class="pds-input" id="pv-live" type="text" aria-describedby="pv-live-err" />
+        <p class="pds-error-text" id="pv-live-err" role="alert" hidden>Name is required.</p>
+      </div>
+      <button class="pds-btn pds-btn--primary" type="submit"><span class="pds-btn__label">Validate</span></button>
+    </form>
+  </section>
+
+  <script src="../button/button.js"></script>
+  <script src="input.js"></script>
+</body>
+</html>

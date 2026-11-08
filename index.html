@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Design System — Preview Hub</title>
+  <link rel="stylesheet" href="tokens/tokens.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      display: flex;
+      height: 100vh;
+      font-family: var(--pds-font-sans);
+      background: var(--pds-surface);
+      color: var(--pds-text-primary);
+    }
+    aside {
+      width: 240px;
+      flex-shrink: 0;
+      background: var(--pds-background);
+      border-right: 1px solid var(--pds-border);
+      padding: var(--pds-space-6) var(--pds-space-4);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--pds-space-2);
+    }
+    aside .brand { font-weight: var(--pds-weight-semibold); font-size: var(--pds-text-lg); margin: 0 0 var(--pds-space-2); }
+    aside .status {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--pds-text-muted);
+      border: 1px dashed var(--pds-border-strong);
+      border-radius: var(--pds-radius-sm);
+      padding: 4px 8px;
+      margin-bottom: var(--pds-space-4);
+    }
+    .pv-nav-group {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pds-text-muted);
+      margin: var(--pds-space-4) 0 var(--pds-space-1);
+    }
+    .pv-nav-item {
+      display: block;
+      width: 100%;
+      text-align: left;
+      font: inherit;
+      font-size: var(--pds-text-sm);
+      padding: var(--pds-space-2) var(--pds-space-3);
+      background: none;
+      border: none;
+      border-radius: var(--pds-radius-md);
+      color: var(--pds-text-secondary);
+      cursor: pointer;
+    }
+    .pv-nav-item:hover { background: var(--pds-surface); color: var(--pds-text-primary); }
+    .pv-nav-item.is-active { background: var(--pds-accent-soft); color: var(--pds-accent); font-weight: var(--pds-weight-medium); }
+    .pv-nav-item:focus-visible { outline: 3px solid var(--pds-focus-ring); outline-offset: 1px; }
+    main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+    .pv-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--pds-space-4);
+      padding: var(--pds-space-3) var(--pds-space-6);
+      background: var(--pds-background);
+      border-bottom: 1px solid var(--pds-border);
+    }
+    .pv-toolbar h1 { font-size: var(--pds-text-base); margin: 0; font-weight: var(--pds-weight-medium); }
+    #pv-viewports { display: flex; gap: var(--pds-space-2); }
+    .pv-vp {
+      font: inherit;
+      font-size: var(--pds-text-xs);
+      padding: 6px 12px;
+      border: 1px solid var(--pds-border-strong);
+      border-radius: var(--pds-radius-full);
+      background: none;
+      color: var(--pds-text-secondary);
+      cursor: pointer;
+    }
+    .pv-vp.is-active { background: var(--pds-text-primary); color: var(--pds-text-inverse); border-color: var(--pds-text-primary); }
+    .pv-vp:focus-visible { outline: 3px solid var(--pds-focus-ring); outline-offset: 1px; }
+    .pv-canvas-wrap { flex: 1; display: flex; justify-content: center; overflow: auto; padding: var(--pds-space-6); }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--pds-border);
+      border-radius: var(--pds-radius-lg);
+      background: var(--pds-background);
+      transition: width var(--pds-duration-normal) var(--pds-ease-standard);
+    }
+    @media (max-width: 720px) {
+      body { flex-direction: column; height: auto; }
+      aside { width: 100%; border-right: none; border-bottom: 1px solid var(--pds-border); }
+      .pv-canvas-wrap { height: 70vh; }
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <p class="brand">PDS</p>
+    <p class="status">Provisional — no final design</p>
+    <nav id="pv-nav" aria-label="Preview navigation"></nav>
+  </aside>
+
+  <main>
+    <div class="pv-toolbar">
+      <h1>Preview canvas</h1>
+      <div id="pv-viewports" role="group" aria-label="Viewport size"></div>
+    </div>
+    <div class="pv-canvas-wrap">
+      <iframe id="pv-canvas" title="Component preview"></iframe>
+    </div>
+  </main>
+
+  <script src="previews/preview.js"></script>
+</body>
+</html>

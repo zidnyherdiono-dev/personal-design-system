@@ -1,0 +1,83 @@
+/* ============================================================
+   Personal Design System — TOKENS (PROVISIONAL)
+   WARNING: placeholder values only — NOT a final design identity.
+   Source of truth: tokens.json. Update both files together.
+   See tokens/STATUS.md before treating any value as final.
+   ============================================================ */
+
+:root {
+  /* color — roles */
+  --pds-background: #ffffff;
+  --pds-surface: #f6f6f7;
+  --pds-surface-sunken: #ececee;
+  --pds-text-primary: #16161a;
+  --pds-text-secondary: #4b4b55;
+  --pds-text-muted: #8a8a96;
+  --pds-text-inverse: #ffffff;
+  --pds-accent: #5b5bd6;
+  --pds-accent-hover: #4747c2;
+  --pds-accent-soft: #ececfc;
+  --pds-border: #e2e2e6;
+  --pds-border-strong: #c9c9d1;
+  --pds-focus-ring: #5b5bd6;
+  --pds-success: #2f9e63;
+  --pds-warning: #c78418;
+  --pds-danger: #d24545;
+  --pds-info: #2f7fd2;
+
+  /* typography */
+  --pds-font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --pds-font-serif: Georgia, 'Times New Roman', serif;
+  --pds-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --pds-text-xs: 0.75rem;
+  --pds-text-sm: 0.875rem;
+  --pds-text-base: 1rem;
+  --pds-text-lg: 1.125rem;
+  --pds-text-xl: 1.25rem;
+  --pds-text-2xl: 1.5rem;
+  --pds-text-3xl: 1.875rem;
+  --pds-text-4xl: 2.25rem;
+  --pds-text-5xl: 3rem;
+  --pds-text-6xl: 3.75rem;
+
+  --pds-leading-tight: 1.15;
+  --pds-leading-snug: 1.35;
+  --pds-leading-normal: 1.6;
+  --pds-leading-relaxed: 1.75;
+
+  --pds-weight-regular: 400;
+  --pds-weight-medium: 500;
+  --pds-weight-semibold: 600;
+
+  /* spacing (base 4px) */
+  --pds-space-1: 0.25rem;
+  --pds-space-2: 0.5rem;
+  --pds-space-3: 0.75rem;
+  --pds-space-4: 1rem;
+  --pds-space-6: 1.5rem;
+  --pds-space-8: 2rem;
+  --pds-space-12: 3rem;
+  --pds-space-16: 4rem;
+  --pds-space-24: 6rem;
+
+  /* radius */
+  --pds-radius-sm: 4px;
+  --pds-radius-md: 8px;
+  --pds-radius-lg: 12px;
+  --pds-radius-xl: 16px;
+  --pds-radius-full: 9999px;
+
+  /* shadow */
+  --pds-shadow-sm: 0 1px 2px rgba(16, 16, 26, 0.06);
+  --pds-shadow-md: 0 4px 12px rgba(16, 16, 26, 0.08);
+  --pds-shadow-lg: 0 12px 32px rgba(16, 16, 26, 0.12);
+
+  /* motion */
+  --pds-duration-fast: 120ms;
+  --pds-duration-normal: 220ms;
+  --pds-duration-slow: 400ms;
+  --pds-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --pds-ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+  --pds-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+}

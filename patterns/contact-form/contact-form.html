@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview — Contact Form | Personal Design System</title>
+  <link rel="stylesheet" href="../../tokens/tokens.css" />
+  <link rel="stylesheet" href="../../previews/preview.css" />
+  <link rel="stylesheet" href="../../components/button/button.css" />
+  <link rel="stylesheet" href="../../components/input/input.css" />
+  <link rel="stylesheet" href="contact-form.css" />
+  <style>
+    body { background: var(--pds-background); color: var(--pds-text-primary); font-family: var(--pds-font-sans); }
+  </style>
+</head>
+<body class="pv-page">
+  <header class="pv-header">
+    <h1 class="pv-title">Pattern: Contact Form</h1>
+    <p class="pv-sub">Validation + status region — try submitting empty.</p>
+  </header>
+
+  <section class="pv-section" style="padding: 0;">
+    <form class="pds-contact" data-pds-demo="contact" novalidate>
+      <h2 class="pds-contact__title">Get in touch</h2>
+
+      <div class="pds-field">
+        <label class="pds-label" for="cf-name">Name</label>
+        <input class="pds-input" id="cf-name" name="name" type="text" autocomplete="name" aria-describedby="cf-name-err" />
+        <p class="pds-error-text" id="cf-name-err" role="alert" hidden>Name is required.</p>
+      </div>
+
+      <div class="pds-field">
+        <label class="pds-label" for="cf-message">Message</label>
+        <textarea class="pds-input pds-input--area" id="cf-message" name="message" aria-describedby="cf-message-err"></textarea>
+        <p class="pds-error-text" id="cf-message-err" role="alert" hidden>Message is required.</p>
+      </div>
+
+      <p class="pds-contact__note">Your message is used only to reply. Nothing is shared with third parties.</p>
+
+      <button class="pds-btn pds-btn--primary pds-btn--block" type="submit"><span class="pds-btn__label">Send message</span></button>
+
+      <p class="pds-contact__status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <script>
+    // Demo-only validation behavior (mirrors components/input/input.js contract).
+    document.querySelector('[data-pds-demo="contact"]').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var ok = true;
+      [['cf-name', 'cf-name-err'], ['cf-message', 'cf-message-err']].forEach(function (pair) {
+        var input = document.getElementById(pair[0]);
+        var err = document.getElementById(pair[1]);
+        var valid = input.value.trim().length > 0;
+        input.classList.toggle('pds-input--error', !valid);
+        input.setAttribute('aria-invalid', String(!valid));
+        err.hidden = valid;
+        if (!valid) ok = false;
+      });
+      var status = this.querySelector('.pds-contact__status');
+      status.textContent = ok ? 'Message validated (demo — nothing was sent).' : 'Please fix the highlighted fields.';
+      status.className = 'pds-contact__status ' + (ok ? 'pds-contact__status--ok' : 'pds-contact__status--err');
+    });
+  </script>
+</body>
+</html>

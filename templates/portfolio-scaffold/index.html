@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Scaffold (WIREFRAME) | Personal Design System</title>
+  <link rel="stylesheet" href="../../tokens/tokens.css" />
+  <style>
+    /* Scaffold base — deliberately neutral. NOT a design identity. */
+    body { margin: 0; font-family: var(--pds-font-sans); color: var(--pds-text-primary); background: var(--pds-background); line-height: var(--pds-leading-normal); }
+    .sk-note { background: #16161a; color: #fff; text-align: center; font-size: 13px; padding: 8px 16px; }
+    .sk-container { max-width: 1080px; margin: 0 auto; padding: 0 var(--pds-space-6); }
+    header.sk-header { border-bottom: 1px solid var(--pds-border); padding: var(--pds-space-4) 0; }
+    .sk-nav { display: flex; justify-content: space-between; align-items: center; gap: var(--pds-space-4); flex-wrap: wrap; }
+    .sk-nav ul { display: flex; gap: var(--pds-space-4); list-style: none; margin: 0; padding: 0; }
+    .sk-nav a { color: var(--pds-text-secondary); text-decoration: none; }
+    .sk-nav a:hover { color: var(--pds-text-primary); }
+    .sk-hero { padding: var(--pds-space-16) 0 var(--pds-space-12); }
+    .sk-hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: var(--pds-leading-tight); margin: 0 0 var(--pds-space-4); }
+    .sk-hero p { color: var(--pds-text-secondary); max-width: 52ch; margin: 0 0 var(--pds-space-8); }
+    .sk-block { background: var(--pds-surface-sunken); border-radius: var(--pds-radius-lg); }
+    .sk-section { padding: var(--pds-space-12) 0; }
+    .sk-section h2 { font-size: var(--pds-text-2xl); margin: 0 0 var(--pds-space-8); }
+    .sk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--pds-space-6); }
+    .sk-card { border: 1px solid var(--pds-border); border-radius: var(--pds-radius-lg); overflow: hidden; }
+    .sk-card .sk-media { aspect-ratio: 16/9; }
+    .sk-card .sk-body { padding: var(--pds-space-4); display: flex; flex-direction: column; gap: var(--pds-space-2); }
+    .sk-line { height: 10px; border-radius: 5px; background: var(--pds-surface-sunken); }
+    .sk-line.w60 { width: 60%; } .sk-line.w80 { width: 80%; } .sk-line.w40 { width: 40%; }
+    .sk-form { display: flex; flex-direction: column; gap: var(--pds-space-4); max-width: 440px; }
+    .sk-form label { font-size: var(--pds-text-sm); font-weight: var(--pds-weight-medium); }
+    .sk-form input, .sk-form textarea { font: inherit; padding: var(--pds-space-3); border: 1px solid var(--pds-border); border-radius: var(--pds-radius-md); background: var(--pds-background); }
+    .sk-form button { font: inherit; font-weight: var(--pds-weight-medium); padding: var(--pds-space-3) var(--pds-space-6); border-radius: var(--pds-radius-md); border: 1px solid transparent; background: var(--pds-accent); color: var(--pds-text-inverse); cursor: pointer; }
+    .sk-form button:focus-visible, .sk-nav a:focus-visible { outline: 3px solid var(--pds-focus-ring); outline-offset: 2px; }
+    footer.sk-footer { border-top: 1px solid var(--pds-border); padding: var(--pds-space-8) 0; color: var(--pds-text-muted); font-size: var(--pds-text-sm); }
+    @media (max-width: 640px) { .sk-nav ul { flex-wrap: wrap; } }
+  </style>
+</head>
+<body>
+  <p class="sk-note">WIREFRAME SCAFFOLD — structure only, visual design intentionally undecided</p>
+
+  <header class="sk-header">
+    <div class="sk-container sk-nav">
+      <strong>Site name</strong>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="sk-hero sk-container">
+      <h1>Headline placeholder</h1>
+      <p>One or two sentences of supporting copy. Replace with real content — never invent details about the site owner.</p>
+      <button type="button">Primary action</button>
+    </section>
+
+    <section class="sk-section sk-container" id="about">
+      <h2>About</h2>
+      <div class="sk-grid">
+        <div class="sk-block" style="height: 120px;"></div>
+        <div class="sk-block" style="height: 120px;"></div>
+      </div>
+    </section>
+
+    <section class="sk-section sk-container" id="projects">
+      <h2>Projects</h2>
+      <div class="sk-grid">
+        <article class="sk-card"><div class="sk-media sk-block"></div><div class="sk-body"><div class="sk-line w60"></div><div class="sk-line w80"></div></div></article>
+        <article class="sk-card"><div class="sk-media sk-block"></div><div class="sk-body"><div class="sk-line w60"></div><div class="sk-line w80"></div></div></article>
+        <article class="sk-card"><div class="sk-media sk-block"></div><div class="sk-body"><div class="sk-line w60"></div><div class="sk-line w80"></div></div></article>
+      </div>
+    </section>
+
+    <section class="sk-section sk-container" id="contact">
+      <h2>Contact</h2>
+      <form class="sk-form">
+        <label for="sk-name">Name</label>
+        <input id="sk-name" type="text" autocomplete="name" />
+        <label for="sk-msg">Message</label>
+        <textarea id="sk-msg" rows="4"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="sk-footer">
+    <div class="sk-container">Name · Year — scaffold footer</div>
+  </footer>
+</body>
+</html>

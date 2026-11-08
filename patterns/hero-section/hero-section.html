@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview — Hero Section | Personal Design System</title>
+  <link rel="stylesheet" href="../../tokens/tokens.css" />
+  <link rel="stylesheet" href="../../previews/preview.css" />
+  <link rel="stylesheet" href="../../components/button/button.css" />
+  <link rel="stylesheet" href="hero-section.css" />
+  <style>
+    body { background: var(--pds-background); color: var(--pds-text-primary); font-family: var(--pds-font-sans); }
+  </style>
+</head>
+<body class="pv-page">
+  <header class="pv-header">
+    <h1 class="pv-title">Pattern: Hero Section</h1>
+    <p class="pv-sub">Neutral demonstration — placeholder content only, no design identity implied.</p>
+  </header>
+
+  <section class="pv-section" style="padding: 0;">
+    <div class="pds-hero">
+      <div>
+        <p class="pds-hero__eyebrow">Section label</p>
+        <h2 class="pds-hero__title">Headline goes here</h2>
+        <p class="pds-hero__lead">Supporting copy explains the value in one or two sentences. Keep the measure readable and the voice direct.</p>
+        <div class="pds-hero__cta">
+          <button class="pds-btn pds-btn--primary pds-btn--lg" type="button"><span class="pds-btn__label">Primary action</span></button>
+          <button class="pds-btn pds-btn--secondary pds-btn--lg" type="button"><span class="pds-btn__label">Secondary</span></button>
+        </div>
+      </div>
+      <img class="pds-hero__media" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='800' height='600' fill='%23ececee'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%238a8a96' font-family='sans-serif' font-size='28'%3EMedia slot%3C/text%3E%3C/svg%3E" alt="Neutral placeholder for hero media slot" />
+    </div>
+  </section>
+</body>
+</html>

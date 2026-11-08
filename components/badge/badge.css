@@ -1,0 +1,26 @@
+/* Badge — token-driven component styles */
+.pds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pds-space-1);
+  font-family: var(--pds-font-sans);
+  font-size: var(--pds-text-xs);
+  font-weight: var(--pds-weight-medium);
+  line-height: 1.4;
+  padding: 2px var(--pds-space-3);
+  border-radius: var(--pds-radius-full);
+  border: 1px solid transparent;
+  background: var(--pds-surface);
+  color: var(--pds-text-secondary);
+}
+.pds-badge--success { background: color-mix(in srgb, var(--pds-success) 14%, white); color: var(--pds-success); }
+.pds-badge--warning { background: color-mix(in srgb, var(--pds-warning) 14%, white); color: var(--pds-warning); }
+.pds-badge--danger  { background: color-mix(in srgb, var(--pds-danger) 12%, white); color: var(--pds-danger); }
+.pds-badge--info    { background: color-mix(in srgb, var(--pds-info) 12%, white); color: var(--pds-info); }
+.pds-badge--outline { background: transparent; border-color: var(--pds-border-strong); color: var(--pds-text-secondary); }
+.pds-badge--interactive { cursor: pointer; min-height: 32px; }
+.pds-badge--interactive:hover { background: var(--pds-surface-sunken); }
+.pds-badge--interactive:focus-visible { outline: 3px solid var(--pds-focus-ring); outline-offset: 2px; }
+.pds-badge--interactive[aria-pressed="true"] { background: var(--pds-accent-soft); color: var(--pds-accent); border-color: var(--pds-accent); }
+.pds-badge:disabled { opacity: 0.45; cursor: not-allowed; }
+.pds-badge__dot { width: 6px; height: 6px; border-radius: var(--pds-radius-full); background: currentColor; }

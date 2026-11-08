@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview — Button | Personal Design System</title>
+  <link rel="stylesheet" href="../../tokens/tokens.css" />
+  <link rel="stylesheet" href="../../previews/preview.css" />
+  <link rel="stylesheet" href="button.css" />
+  <style>
+    body { background: var(--pds-background); color: var(--pds-text-primary); font-family: var(--pds-font-sans); }
+  </style>
+</head>
+<body class="pv-page">
+  <header class="pv-header">
+    <h1 class="pv-title">Button</h1>
+    <p class="pv-sub">Variants × sizes × states — token-driven, style-agnostic structure.</p>
+  </header>
+
+  <section class="pv-section">
+    <h2 class="pv-h2">Variants</h2>
+    <div class="pv-row">
+      <button class="pds-btn pds-btn--primary" type="button"><span class="pds-btn__label">Primary</span></button>
+      <button class="pds-btn pds-btn--secondary" type="button"><span class="pds-btn__label">Secondary</span></button>
+      <button class="pds-btn pds-btn--ghost" type="button"><span class="pds-btn__label">Ghost</span></button>
+      <button class="pds-btn pds-btn--danger" type="button"><span class="pds-btn__label">Danger</span></button>
+    </div>
+  </section>
+
+  <section class="pv-section">
+    <h2 class="pv-h2">Sizes</h2>
+    <div class="pv-row">
+      <button class="pds-btn pds-btn--primary pds-btn--sm" type="button"><span class="pds-btn__label">Small</span></button>
+      <button class="pds-btn pds-btn--primary" type="button"><span class="pds-btn__label">Default</span></button>
+      <button class="pds-btn pds-btn--primary pds-btn--lg" type="button"><span class="pds-btn__label">Large</span></button>
+    </div>
+    <div class="pv-row" style="margin-top: var(--pds-space-4); max-width: 320px;">
+      <button class="pds-btn pds-btn--primary pds-btn--block" type="button"><span class="pds-btn__label">Block (full width)</span></button>
+    </div>
+  </section>
+
+  <section class="pv-section">
+    <h2 class="pv-h2">States</h2>
+    <div class="pv-row">
+      <button class="pds-btn pds-btn--primary" type="button"><span class="pds-btn__label">Default</span></button>
+      <button class="pds-btn pds-btn--primary" type="button" style="background: var(--pds-accent-hover);"><span class="pds-btn__label">Hover (simulated)</span></button>
+      <button class="pds-btn pds-btn--primary" type="button" style="outline: 3px solid var(--pds-focus-ring); outline-offset: 2px;"><span class="pds-btn__label">Focus-visible (simulated)</span></button>
+      <button class="pds-btn pds-btn--primary" type="button" disabled><span class="pds-btn__label">Disabled</span></button>
+      <button class="pds-btn pds-btn--primary" type="button" data-pds-demo="loading"><span class="pds-btn__label">Click → Loading</span></button>
+    </div>
+  </section>
+
+  <section class="pv-section">
+    <h2 class="pv-h2">With icon</h2>
+    <div class="pv-row">
+      <button class="pds-btn pds-btn--secondary" type="button" aria-label="Add item">
+        <span class="pds-btn__icon" aria-hidden="true">＋</span>
+        <span class="pds-btn__label">Add</span>
+      </button>
+      <button class="pds-btn pds-btn--secondary" type="button" aria-label="Remove item">
+        <span class="pds-btn__label">Remove</span>
+        <span class="pds-btn__icon" aria-hidden="true">－</span>
+      </button>
+    </div>
+  </section>
+
+  <script src="button.js"></script>
+</body>
+</html>

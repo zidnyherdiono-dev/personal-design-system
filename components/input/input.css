@@ -1,0 +1,39 @@
+/* Input — token-driven component styles */
+.pds-field { display: flex; flex-direction: column; gap: var(--pds-space-2); max-width: 420px; }
+.pds-label {
+  font-family: var(--pds-font-sans);
+  font-size: var(--pds-text-sm);
+  font-weight: var(--pds-weight-medium);
+  color: var(--pds-text-primary);
+}
+.pds-input {
+  font-family: var(--pds-font-sans);
+  font-size: var(--pds-text-base);
+  color: var(--pds-text-primary);
+  background: var(--pds-background);
+  border: 1px solid var(--pds-border);
+  border-radius: var(--pds-radius-md);
+  padding: var(--pds-space-3);
+  min-height: 44px;
+  width: 100%;
+  transition: border-color var(--pds-duration-fast) var(--pds-ease-standard);
+}
+.pds-input--area { min-height: 96px; resize: vertical; }
+.pds-input::placeholder { color: var(--pds-text-muted); }
+.pds-input:hover { border-color: var(--pds-border-strong); }
+.pds-input:focus-visible {
+  outline: 2px solid var(--pds-focus-ring);
+  outline-offset: 1px;
+  border-color: var(--pds-accent);
+}
+.pds-input:disabled {
+  background: var(--pds-surface-sunken);
+  color: var(--pds-text-muted);
+  cursor: not-allowed;
+}
+.pds-input--error { border-color: var(--pds-danger); }
+.pds-input--error:focus-visible { outline-color: var(--pds-danger); }
+.pds-help { font-size: var(--pds-text-sm); color: var(--pds-text-muted); margin: 0; }
+.pds-error-text { font-size: var(--pds-text-sm); color: var(--pds-danger); margin: 0; }
+.pds-required-mark { color: var(--pds-danger); }
+@media (prefers-reduced-motion: reduce) { .pds-input { transition: none; } }

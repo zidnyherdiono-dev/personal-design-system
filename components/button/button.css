@@ -1,0 +1,65 @@
+/* Button — token-driven component styles (PROVISIONAL tokens, structure-focused) */
+.pds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pds-space-2);
+  font-family: var(--pds-font-sans);
+  font-size: var(--pds-text-base);
+  font-weight: var(--pds-weight-medium);
+  line-height: 1.2;
+  padding: var(--pds-space-3) var(--pds-space-6);
+  border-radius: var(--pds-radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--pds-duration-fast) var(--pds-ease-standard),
+              border-color var(--pds-duration-fast) var(--pds-ease-standard),
+              transform var(--pds-duration-fast) var(--pds-ease-standard);
+}
+
+/* variants */
+.pds-btn--primary   { background: var(--pds-accent); color: var(--pds-text-inverse); }
+.pds-btn--secondary { background: var(--pds-surface); color: var(--pds-text-primary); border-color: var(--pds-border-strong); }
+.pds-btn--ghost     { background: transparent; color: var(--pds-text-primary); }
+.pds-btn--danger    { background: var(--pds-danger); color: var(--pds-text-inverse); }
+
+/* states */
+.pds-btn--primary:hover   { background: var(--pds-accent-hover); }
+.pds-btn--secondary:hover { background: var(--pds-surface-sunken); }
+.pds-btn--ghost:hover     { background: var(--pds-surface); }
+.pds-btn--danger:hover    { filter: brightness(0.92); }
+
+.pds-btn:focus-visible {
+  outline: 3px solid var(--pds-focus-ring);
+  outline-offset: 2px;
+}
+
+.pds-btn:active { transform: translateY(1px); }
+
+.pds-btn:disabled,
+.pds-btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* sizes */
+.pds-btn--sm { font-size: var(--pds-text-sm); padding: var(--pds-space-2) var(--pds-space-4); }
+.pds-btn--lg { font-size: var(--pds-text-lg); padding: var(--pds-space-4) var(--pds-space-8); }
+.pds-btn--block { width: 100%; }
+
+/* loading spinner */
+.pds-btn__spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--pds-radius-full);
+  animation: pds-spin 0.7s linear infinite;
+}
+@keyframes pds-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .pds-btn { transition: none; }
+  .pds-btn__spinner { animation-duration: 2s; }
+}
